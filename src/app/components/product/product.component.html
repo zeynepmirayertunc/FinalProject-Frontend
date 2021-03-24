@@ -1,48 +1,14 @@
-<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <div class="mb-3">
-    <label for="filterText" class="form-label">Search Product</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="enter product name etc. ">
-  </div>
-  <div *ngIf="filterText.length>2" class="alert alert-success"> 
-    you searched {{filterText}} 
-  </div>
-<table *ngIf="dataLoaded!=false" class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Product Name</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Value Added Price</th>
-            <th>Units In Stock</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let product of products |filterPipe:filterText">
-        <td>{{product.productId}}</td>
-        <td>{{product.productName |uppercase}}</td>
-        <td>{{product.categoryId}}</td>
-        <td>{{product.unitPrice |currency}}</td>
-        <td>{{product.unitPrice |vatAdded:18 |currency}}</td>
-        <td>{{product.unitsInStock}}</td>
-        <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Add to Cart</button></td>
-    </tr>
-</tbody>
-</table> -->
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 
 <div class="mb-3">
-  <label for="filterText" class="form-label">Ürün ara</label>
+  <label for="filterText" class="form-label">Search Product</label>
   <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
   placeholder="arama ifadesi giriniz">
 </div>
 <div *ngIf="filterText.length>2" class="alert alert-success">
-  {{filterText}} aradınız.
+   you {{filterText}} searched.
 </div>
 
 <table *ngIf="dataLoaded==true" class="table">
@@ -66,7 +32,7 @@
       <td>{{ product.unitPrice |vatAdded:18 | currency }}</td>
       <td>{{ product.unitsInStock }}</td>
       <td><button (click)="addToCart(product)" 
-        type="button" class="btn btn-success">Sepete ekle</button></td>
+        type="button" class="btn btn-success">Add to Cart</button></td>
     </tr>
   </tbody>
   
